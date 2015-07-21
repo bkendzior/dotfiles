@@ -17,6 +17,11 @@ alias l="ls -la"
 # Path variable additions (bottom to top priority)
 # ----
 
+# golang
+if [ -d /usr/local/go/bin ]; then
+  export PATH="$PATH:/usr/local/go/bin"
+fi
+
 # rbenv
 if [ -d $home/.rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
