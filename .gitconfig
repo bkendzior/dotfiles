@@ -1,3 +1,5 @@
 [user]
 	name = Brian Kendzior
 	email = bkendzior@gmail.com
+[push]
+	default = simple
