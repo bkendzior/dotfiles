@@ -21,3 +21,8 @@ alias l="ls -la"
 if [ -d $home/.rbenv ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
 fi
+
+# ----
+# Commands to run on startup
+# ----
+tmux attach || tmux new
