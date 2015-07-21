@@ -1,5 +1,4 @@
 # This is Git's per-user configuration file.
 [core]
-# Please adapt and uncomment the following lines:
-user = Brian Kendzior
-email = bkendzior@gmail.com
+  user = Brian Kendzior
+  email = bkendzior@gmail.com
