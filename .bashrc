@@ -12,3 +12,12 @@ export LSCOLORS=gxfxcxdxbxegedabagaced
 # ls aliases
 alias ls="ls -F -G"
 alias l="ls -la"
+
+# ----
+# Path variable additions (bottom to top priority)
+# ----
+
+# rbenv
+if [ -d $home/.rbenv ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+fi
