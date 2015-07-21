@@ -25,4 +25,6 @@ fi
 # ----
 # Commands to run on startup
 # ----
-tmux attach || tmux new
+if [[ ! $TERM =~ screen ]]; then
+  tmux attach || tmux new
+fi
