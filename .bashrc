@@ -18,10 +18,15 @@ export LSCOLORS=gxfxcxdxbxegedabagaced
 # Path variable additions (bottom to top priority)
 # ----
 
+  # golang
+  if [ -d /usr/local/go/bin ]; then
+    export PATH="$PATH:/usr/local/go/bin"
+  fi
+
   # rbenv
-  if [ -d $home/.rbenv ]; then
+  if [ -d $HOME/.rbenv ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
+    eval "$(rbenv init -)" 
   fi
 
 # ----
