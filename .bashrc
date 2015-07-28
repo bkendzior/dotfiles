@@ -1,6 +1,11 @@
+# Terminal Prompt
 export PS1="\[\033[38;5;7m\]\t\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;9m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\]:\[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]\n\[$(tput bold)\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
+# Aliases
 alias refresh='. ~/.bashrc'
+alias be='bundle exec'
+alias ls="ls -F -G"
+alias l="ls -la"
 
 # Terminal VI mode
 set -o vi
@@ -9,22 +14,21 @@ set -o vi
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagaced
 
-# ls aliases
-alias ls="ls -F -G"
-alias l="ls -la"
-
 # ----
 # Path variable additions (bottom to top priority)
 # ----
 
-# rbenv
-if [ -d $home/.rbenv ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-fi
+  # rbenv
+  if [ -d $home/.rbenv ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+  fi
 
 # ----
 # Commands to run on startup
 # ----
-if [[ ! $TERM =~ screen ]]; then
-  tmux attach || tmux new
-fi
+
+  # tmux
+  if [[ ! $TERM =~ screen ]]; then
+    tmux attach || tmux new
+  fi
