@@ -34,6 +34,8 @@ export LSCOLORS=gxfxcxdxbxegedabagaced
 # ----
 
   # tmux
-  if [[ ! $TERM =~ screen ]]; then
-    tmux attach || tmux new
+  if [[ $(hostname) != "Brians-Mac-mini.local" ]]; then
+    if [[ ! $TERM =~ screen ]]; then
+      tmux attach || tmux new
+    fi
   fi
